@@ -194,3 +194,66 @@
 
 
 
+
+
+
+
+
+/**
+ * CSS3 - Border Radius
+ */
+
+/* single border radius applied to all corners */
+.border-radius(@r) {
+	-webkit-border-radius:					@r;
+	-moz-border-radius: 					@r;
+	border-radius: 							@r;
+}
+
+/* two values applied tob/bottom then bottom/top */
+.border-radius( @rt, @rb ) {
+	-webkit-border-radius: 					@rt;
+	-webkit-border-bottom-right-radius: 	@rb;
+	-webkit-border-bottom-left-radius: 		@rb;
+	-moz-border-radius: 					@rt;
+	-moz-border-radius-bottomright: 		@rb;
+	-moz-border-radius-bottomleft: 			@rb;
+	border-radius: 							@rt;
+	border-bottom-right-radius: 			@rb;
+	border-bottom-left-radius: 				@rb;
+}
+
+.border-radius( @rt, @rb, tb ) {			.border-radius(@rt,@rb) }
+.border-radius( @rt, @rb, bt ) {			.border-radius(@rb,@rt) }
+
+.border-radius( @rl, @rr, lr ) {
+	-webkit-border-radius: 					@rl;
+	-webkit-border-top-right-radius: 		@rr;
+	-webkit-border-bottom-right-radius: 	@rr;
+	-moz-border-radius: 					@rl;
+	-moz-border-radius-topright: 			@rr;
+	-moz-border-radius-bottomright: 		@rr;
+	border-radius: 							@rl;
+	border-top-right-radius: 				@rr;
+	border-bottom-right-radius: 			@rr;
+}
+
+.border-radius( @rl, @rr, rl ) {			.border-radius(@rr,@rl,lr) }
+
+// border-radius different for every corner
+.border-radius( @r1, @r2, @r3, @r4 ) {
+	-webkit-border-top-left-radius: 		@r1;
+	-webkit-border-top-right-radius: 		@r2;
+	-webkit-border-bottom-right-radius: 	@r3;
+	-webkit-border-bottom-left-radius: 		@r4;
+	-moz-border-radius-topleft: 			@r1;
+	-moz-border-radius-topright: 			@r2;
+	-moz-border-radius-bottomright: 		@r3;
+	-moz-border-radius-bottomleft: 			@r4;
+	border-top-left-radius: 				@r1;
+	border-top-right-radius: 				@r2;
+	border-bottom-right-radius: 			@r3;
+	border-bottom-left-radius: 				@r4;
+	
+}
+
