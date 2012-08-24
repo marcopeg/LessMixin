@@ -1,0 +1,183 @@
+/**
+ * LessMixin Demo
+ */
+
+
+
+
+
+
+
+/* Imports the LessMixin library */
+@import "mixin.less";
+
+
+
+
+
+
+/**
+ * Example's Styles
+ * Inside this code I used LessMixin's rules to apply styles to each example.
+ *
+ * You can read this code and learn from it.
+ */
+
+@exampleBgColor: #fff8de;
+
+
+article {
+	
+	.mb( 50px );
+	
+	border-bottom: 1px solid #eee;
+	.mb( 8em );
+	.pb( 2em );
+	
+	.page-header {
+		.mt(80px);
+	}
+	
+	section {	
+		
+		.mb( 2em );
+		&:last-child { .mb; }
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+/**
+ * Margins Demo
+ */
+
+@margin: 60px;
+
+.demo-margin-column {
+	background: @exampleBgColor ;
+	
+	pre {
+		.mt( 1em );
+	}
+	
+}
+
+.demo-margin-top, .demo-margin-right, .demo-margin-bottom, .demo-margin-left,
+.demo-margin-vertical-a, .demo-margin-vertical-b, .demo-margin-horizontal-a, .demo-margin-horizontal-b {
+	.tj;
+	background: #eee;
+	padding:5px;
+	
+	background: darken( @exampleBgColor, 50% );
+	
+}
+
+.demo-margin-top {
+	.mt( @margin );
+}
+
+.demo-margin-right {
+	.mr( @margin );
+}
+
+.demo-margin-bottom {
+	.mb( @margin );
+}
+
+.demo-margin-left {
+	.ml( @margin );
+}
+
+.demo-margin-vertical-a {
+	.mv( @margin );
+}
+
+.demo-margin-vertical-b {
+	.mv( @margin/2, @margin );
+}
+
+.demo-margin-horizontal-a {
+	.mh( @margin );
+}
+
+.demo-margin-horizontal-b {
+	.mh( @margin/2, @margin );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Paddings Demo
+ */
+
+@padding: 60px;
+
+.demo-padding-column {
+	background: @exampleBgColor ;
+	
+	pre {
+		.pt( 1em );
+	}
+	
+}
+
+.demo-padding-top, .demo-padding-right, .demo-padding-bottom, .demo-padding-left,
+.demo-padding-vertical-a, .demo-padding-vertical-b, .demo-padding-horizontal-a, .demo-padding-horizontal-b {
+	.tj;
+	background: #eee;
+	padding:5px;
+	
+	background: darken( @exampleBgColor, 50% );
+	
+}
+
+.demo-padding-top {
+	.pt( @padding );
+}
+
+.demo-padding-right {
+	.pr( @padding );
+}
+
+.demo-padding-bottom {
+	.pb( @padding );
+}
+
+.demo-padding-left {
+	.pl( @padding );
+}
+
+.demo-padding-vertical-a {
+	.pv( @padding );
+}
+
+.demo-padding-vertical-b {
+	.pv( @padding/2, @padding );
+}
+
+.demo-padding-horizontal-a {
+	.ph( @padding );
+}
+
+.demo-padding-horizontal-b {
+	.ph( @padding/2, @padding );
+}

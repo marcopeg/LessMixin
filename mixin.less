@@ -1,0 +1,72 @@
+/**
+ * LESS Mixin
+ *
+ * This file contains some usefull LESSCSS mixins to use in your projects.
+ */
+
+
+
+
+
+/**
+ * TEXT ALIGN SHORTCUTS
+ * these rules are simple quick shortcuts to the "text-align" CSS property
+ */
+.ta( @align:left ) { text-align: @align }
+.tl { .ta( left ) }
+.tr { .ta( right ) }
+.tc { .ta( center ) }
+.tj { .ta( justify ) }
+
+
+
+
+
+
+
+/**
+ * MARGIN
+ * these are shortcuts to the margin-{side} CSS property
+ */
+.mt ( @value:0 ) { margin-top: 		@value }
+.mr ( @value:0 ) { margin-right: 	@value }
+.mb ( @value:0 ) { margin-bottom: 	@value }
+.ml ( @value:0 ) { margin-left: 	@value }
+
+/**
+ * MARGIN - H / V
+ * these are shortcuts to set only horizontals or vertical margins without alter existing rules
+ * you can use these mixins with one value applied to the left/right, top/bottom margins or
+ * you can use them with separated values
+ */
+.mv( @value:0 ) { 		.mt(@value); 	.mb(@value); }
+.mv( @v1, @v2 ) { 		.mt(@v1); 		.mb(@v2); }
+
+.mh( @value:0 ) { 		.ml(@value); 	.mr(@value); }
+.mh( @v1, @v2 ) { 		.ml(@v1); 		.mr(@v2); }
+
+
+
+
+
+
+/**
+ * PADDING
+ * these are shortcuts to the padding-{side} CSS property
+ */
+.pt ( @value:0 ) { padding-top: 	@value }
+.pr ( @value:0 ) { padding-right: 	@value }
+.pb ( @value:0 ) { padding-bottom: 	@value }
+.pl ( @value:0 ) { padding-left: 	@value }
+
+/**
+ * PADDING - H / V
+ * these are shortcuts to set only horizontals or vertical paddings without alter existing rules
+ * you can use these mixins with one value applied to the left/right, top/bottom paddings or
+ * you can use them with separated values
+ */
+.pv( @value:0 ) { 		.pt(@value); 	.pb(@value); }
+.pv( @v1, @v2 ) { 		.pt(@v1); 		.pb(@v2); }
+
+.ph( @value:0 ) { 		.pl(@value); 	.pr(@value); }
+.ph( @v1, @v2 ) { 		.pl(@v1); 		.pr(@v2); }
