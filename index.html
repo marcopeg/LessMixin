@@ -8,8 +8,12 @@
 		<meta name="description" content="LessMixin supplies useful shortcuts to the common styles and new mixins to easily perform complex things! LessCSS Mixin Extensions">
 		<meta name="keywords" content="less, css, lesscss, mixin, extension, shortcuts">
 		
+		<!--[if lt IE 9]>
+		<script src="./js/html5shiv.js"></script>
+		<![endif]-->
+		
 		<!-- [[ jQuery ]] -->
-		<script src="./jquery.min.js" type="text/javascript"></script>
+		<script src="./js/jquery.min.js" type="text/javascript"></script>
 		
 		
 		<!-- [[ Twitter Bootstrap ]] -->
@@ -19,7 +23,7 @@
 		
 		<!-- [[ Demo LESS CSS // it links to the mixin! -->
 		<link rel="stylesheet/less" type="text/css" href="./demo.less">
-		<script src="./less-1.3.0.min.js" type="text/javascript"></script>
+		<script src="./js/less-1.3.0.min.js" type="text/javascript"></script>
 		
 		
 	</head>
@@ -45,6 +49,18 @@
 								<li><a href="#text-alignment">Text Aligment</a></li>
 								<li><a href="#margins">Margins</a></li>
 								<li><a href="#paddings">Paddings</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Box Model
+								<b class="caret"></b>
+							</a>
+							
+							<ul class="dropdown-menu">
+								<li><a href="#size">Sizing Elements</a></li>
+								<li><a href="#block">Display Block Utilities</a></li>
+								<li><a href="#mask">Masking Utilities</a></li>
 							</ul>
 						</li>
 						
@@ -174,22 +190,22 @@
 				
 				<div class="row">
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">margin-top</span> of <b>60px</b> using <code>.mt</code> mixin</small></h5>
 						<p class="demo-margin-top"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">margin-right</span> of <b>60px</b> using <code>.mr</code> mixin</small></h5>
 						<p class="demo-margin-right"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">margin-bottom</span> of <b>60px</b> using <code>.mb</code> mixin</small></h5>
 						<p class="demo-margin-bottom"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">margin-left</span> of <b>60px</b> using <code>.ml</code> mixin</small></h5>
 						<p class="demo-margin-left"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
@@ -215,7 +231,7 @@
 				
 				<div class="row">
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .mv( 60px );
@@ -225,7 +241,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .mv( 30px, 60px );
@@ -235,7 +251,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .mh( 30px );
@@ -245,7 +261,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-margin-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .mh( 30px, 60px );
@@ -298,22 +314,22 @@
 				
 				<div class="row">
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">padding-top</span> of <b>60px</b> using <code>.pt</code> mixin</small></h5>
 						<p class="demo-padding-top"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">padding-right</span> of <b>60px</b> using <code>.pr</code> mixin</small></h5>
 						<p class="demo-padding-right"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">padding-bottom</span> of <b>60px</b> using <code>.pb</code> mixin</small></h5>
 						<p class="demo-padding-bottom"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 						<h5><small>follwing block has a <span class="label label-info">padding-left</span> of <b>60px</b> using <code>.pl</code> mixin</small></h5>
 						<p class="demo-padding-left"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small></p>
 					</div>
@@ -339,7 +355,7 @@
 				
 				<div class="row">
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .pv( 60px );
@@ -349,7 +365,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .pv( 30px, 60px );
@@ -359,7 +375,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .ph( 30px );
@@ -369,7 +385,7 @@
 					
 					</div>
 					
-					<div class="span3 demo-padding-column">
+					<div class="span3 demo-column">
 					
 <pre>.foo {
     .ph( 30px, 60px );
@@ -389,7 +405,292 @@
 		
 		
 		
+		<!-- [[    SIZE    ]] -->
+		<article id="size" class="container">
+			
+			<div class="page-header">
+				<h2>.size{} <small>Shortcuts</small></h2>
+			</div>
+			
+			<section>
+			
+				<div class="row">
+					
+					<div class="span12">
+						
+						<p>
+							You often need to set <code>width</code> and <code>height</code> for an element.<br>
+							Use the <span class="label label-info">.size</span> mixin as follow:
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .size( 70px );
+}</pre>
+						
+						<p class="demo-size-a">@w:70px </p>
+					</div>
+					
+					<div class="span3 demo-column">
+
+<pre>p {
+    .size( 150px, 80px );
+}</pre>
+
+						<p class="demo-size-b">@w:150px, @h:80px </p>
+					</div>
+				
+				</div>
+				
+			</section>
+			
+		</article>
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- [[    BLOCK    ]] -->
+		<article id="block" class="container">
+			
+			<div class="page-header">
+				<h2>.block{} <small>Shortcuts</small></h2>
+			</div>
+			
+			<section>
+			
+				<div class="row">
+					
+					<div class="span12">
+						
+						<p>
+							You often need to set an item to act as a <e>block</e> element with the <code>block</code> rule.<br>
+							Use the <span class="label label-info">.block</span> mixin as follow:
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .block;
+}</pre>
+						
+						<p class="demo-block-a">@w:auto </p>
+					</div>
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .block( 70px );
+}</pre>
+						
+						<p class="demo-block-b">@w:70px </p>
+					</div>
+					
+					<div class="span3 demo-column">
+
+<pre>p {
+    .block( 150px, 80px );
+}</pre>
+
+						<p class="demo-block-c">@w:150px, @h:80px </p>
+					</div>
+					
+					<div class="span3">
+						<div class="alert alert-block alert-info">
+							<h4>.block with .size!</h4>
+							<p>
+								<code>.block</code> mixin sets up the <em>block</em> CSS property but is also able to 
+								set box size using the <code>.size</code> mixin!
+							</p>
+						</div>
+					</div>
+				
+				</div>
+				
+			</section>
+			
+			<section>
+				
+				<div class="row">
+					
+					<div class="span12">
+						
+						<h3>.inline-block{} <small>down to IE6!</small></h3>
+						
+						<p>
+							LessMixin supplies an <code>.inline-block</code> mixin, use it when needs to define an 
+							<em>inline-block</em> item guaranteeing retro-compatibility to IE8, IE7 and IE6!
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="span8 demo-column">
+						
+						<p class="demo-inline-block-a">inline-block</p>
+						<p class="demo-inline-block-b">inline-block( 150px )</p>
+						<p class="demo-inline-block-c">inline-block( 150px, 90px )</p>
+						
+					</div>
+					
+					<div class="span4">
+						<div class="alert alert-block alert-info">
+							<p>
+								You can use the <code>.iblock</code> shortcut instead of <em>.inline-block</em> mixin!
+							</p>
+						</div>
+					</div>
+					
+				</div>
+				
+			</section>
+			
+		</article>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- [[    MASK    ]] -->
+		<article id="mask" class="container">
+			
+			<div class="page-header">
+				<h2>.mask{} <small>mixin</small></h2>
+			</div>
+			
+			<section>
+			
+				<div class="row">
+					
+					<div class="span12">
+						
+						<p>
+							You often need to set an item to act as a <e>mask</e> element with the <code>overflow</code> rule.<br>
+							Think about sprites, layout cards, etc...<br>
+						</p>
+						
+						<p>
+							Use the <span class="label label-info">.mixin</span> mixin as follow:
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .mask;
+}</pre>
+						
+						<p class="demo-mask-a"><img src="./img/less-logo.jpg"></p>
+					</div>
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .mask( 80px );
+}</pre>
+						
+						<p class="demo-mask-b"><img src="./img/less-logo.jpg"></p>
+					</div>
+					
+					<div class="span3 demo-column">
+						
+<pre>p {
+    .mask( *, 50px );
+}</pre>
+						
+						<p class="demo-mask-c"><img src="./img/less-logo.jpg"></p>
+					</div>
+					
+					<div class="span3 demo-column">
+
+<pre>p {
+    .mask( 80px, 80px );
+}</pre>
+
+						<p class="demo-mask-d"><img src="./img/less-logo.jpg"></p>
+					</div>
+				
+				</div>
+				
+			</section>
+			
+			<section>
+				
+				<div class="row">
+					
+					<div class="span12">
+						
+						<h3>.inline-mask{}</h3>
+						
+						<p>
+							You can play with <em>inline-masks</em> using the <code>.inline-mask</code> mixin or it's 
+							shortcut <code>.imask</code>.
+						</p>
+						
+						<p>
+							This mixin works just like the <code>.mask</code> with the same options to set mask's <em>width</em> and <em>height</em>.
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="span12 demo-column">
+						
+						<p class="demo-imask-a"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-b"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-c"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-d"><img src="./img/less-logo.jpg"></p>
+					
+					</div>
+					
+				</div>
+				
+			</section>
+			
+		</article>
 		
 		
 		

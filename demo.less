@@ -48,6 +48,27 @@ article {
 }
 
 
+.demo-column {
+	
+	background: @exampleBgColor ;
+	
+	pre {
+		.mt( 1em );
+	}
+	
+}
+
+.demo-box {
+	
+	.tj;
+	
+	padding:5px;
+	
+	background: darken( @exampleBgColor, 50% );
+	
+}
+
+
 
 
 
@@ -60,23 +81,9 @@ article {
 
 @margin: 60px;
 
-.demo-margin-column {
-	background: @exampleBgColor ;
-	
-	pre {
-		.mt( 1em );
-	}
-	
-}
-
 .demo-margin-top, .demo-margin-right, .demo-margin-bottom, .demo-margin-left,
 .demo-margin-vertical-a, .demo-margin-vertical-b, .demo-margin-horizontal-a, .demo-margin-horizontal-b {
-	.tj;
-	background: #eee;
-	padding:5px;
-	
-	background: darken( @exampleBgColor, 50% );
-	
+	.demo-box;
 }
 
 .demo-margin-top {
@@ -131,23 +138,9 @@ article {
 
 @padding: 60px;
 
-.demo-padding-column {
-	background: @exampleBgColor ;
-	
-	pre {
-		.pt( 1em );
-	}
-	
-}
-
 .demo-padding-top, .demo-padding-right, .demo-padding-bottom, .demo-padding-left,
 .demo-padding-vertical-a, .demo-padding-vertical-b, .demo-padding-horizontal-a, .demo-padding-horizontal-b {
-	.tj;
-	background: #eee;
-	padding:5px;
-	
-	background: darken( @exampleBgColor, 50% );
-	
+	.demo-box;
 }
 
 .demo-padding-top {
@@ -180,4 +173,134 @@ article {
 
 .demo-padding-horizontal-b {
 	.ph( @padding/2, @padding );
+}
+
+
+
+
+
+
+
+
+
+/**
+ * Size Demo
+ */
+
+.demo-size-a {
+	.demo-box;
+	.size( 70px );
+}
+
+.demo-size-b {
+	.demo-box;
+	.size( 150px, 80px );
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ * Block Demo
+ */
+
+.demo-block-a {
+	.demo-box;
+	.block;
+}
+
+.demo-block-b {
+	.demo-box;
+	.block( 70px );
+}
+
+.demo-block-c {
+	.demo-box;
+	.block( 150px, 80px );
+}
+
+/**
+ * Inline Block Demo
+ */
+.demo-inline-block-a, .demo-inline-block-b, .demo-inline-block-c, .demo-inline-block-d {
+	.demo-box;
+	margin:2px;
+	vertical-align: top;
+	font-size: 11px;
+}
+
+.demo-inline-block-a {
+	.inline-block;
+}
+
+.demo-inline-block-b {
+	.inline-block( 150px );
+}
+
+.demo-inline-block-c {
+	.inline-block( 150px, 60px );
+}
+
+
+
+
+
+
+
+/**
+ * Mask Demo
+ */
+
+.demo-mask-a, .demo-mask-b, .demo-mask-c, .demo-mask-d,
+.demo-imask-a, .demo-imask-b, .demo-imask-c, .demo-imask-d {
+	
+	// prevent TwitterBootstrap responsive image handling!
+	img { max-width: none; }
+	
+}
+
+.demo-mask-a {
+	.demo-box;
+	.mask;
+}
+
+.demo-mask-b {
+	.demo-box;
+	.mask( 80px );
+}
+
+.demo-mask-c {
+	.demo-box;
+	.mask( null, 50px );
+}
+
+.demo-mask-d {
+	.demo-box;
+	.mask( 60px, 60px );
+}
+
+.demo-imask-a {
+	.demo-box;
+	.imask;
+}
+
+.demo-imask-b {
+	.demo-box;
+	.imask( 80px );
+}
+
+.demo-imask-c {
+	.demo-box;
+	.imask( null, 50px );
+}
+
+.demo-imask-d {
+	.demo-box;
+	.imask( 60px, 60px );
 }
