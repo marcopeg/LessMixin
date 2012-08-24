@@ -65,6 +65,26 @@
 								
 							</ul>
 						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								CSS3
+								<b class="caret"></b>
+							</a>
+							
+							<ul class="dropdown-menu">
+								<li><a href="#border-radius">.border-radius</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Techniques
+								<b class="caret"></b>
+							</a>
+							
+							<ul class="dropdown-menu">
+								<li><a href="#sprite">.sprite</a></li>
+							</ul>
+						</li>
 						
 					</ul>
 					
@@ -802,19 +822,6 @@
 			</div>
 			
 			<section>
-			
-				<div class="row">
-					
-					<div class="span12">
-						
-						<p>
-							You often need to set <code>width</code> and <code>height</code> for an element.<br>
-							Use the <span class="label label-info">.size</span> mixin as follow:
-						</p>
-						
-					</div>
-					
-				</div>
 				
 				<div class="row">
 					
@@ -827,7 +834,121 @@
 						<p class="demo-border-radius-e">.border-radius( 5px, 15px, lr )</p>
 						<p class="demo-border-radius-f">.border-radius( 5px, 15px, rl )</p>
 					</div>
+					
+					<div class="span3 demo-column">
+						<p class="demo-border-radius-g">.border-radius( 5px, 15px, tlbr )</p>
+						<p class="demo-border-radius-h">.border-radius( 5px, 15px, trbl )</p>
+						<p class="demo-border-radius-i">.border-radius( 15px, tlbr )</p>
+						<p class="demo-border-radius-l">.border-radius( 15px, trbl )</p>
+					</div>
+					
+					<div class="span3 demo-column">
+						<p class="demo-border-radius-m">.border-radius( 15px, t )</p>
+						<p class="demo-border-radius-n">.border-radius( 15px, b )</p>
+						<p class="demo-border-radius-o">.border-radius( 15px, l )</p>
+						<p class="demo-border-radius-p">.border-radius( 15px, r )</p>
+					</div>
 				
+				</div>
+				
+			</section>
+			
+		</article>
+
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- [[    SPRITE    ]] -->
+		<article id="sprite" class="container">
+			
+			<div class="page-header">
+				<h2>.sprite{} <small>Techniques</small></h2>
+			</div>
+			
+			<section>
+			
+				<div class="row">
+					
+					<div class="span12">
+						
+						<p>
+							<strong>Sprites</strong> allow you to <strong>optimize background images</strong> weight packing them into a single image.<br>
+							Creating CSS code for sprites may be complicated but with LessMixin you can easily set up some CSS sprited buttons, even with two or tree states!
+						</p>
+						
+						<p>
+							Following examples sets up 3 buttons designed by my friend and packed into this image:
+						</p>
+						
+						<p><img src="./img/sprite_btn.png" alt="buttons_sprite" class="img-polaroid" width="400"></p>
+						
+						<p>
+							<strong>This is the functional results:</strong>
+						</p>
+						
+					</div>
+					
+				</div>
+				
+				<div class="row">
+					
+					<div class="span3 demo-column">
+						<a href="#" class="demo-sprite-a">Choose a File</a>
+						<a href="#" class="demo-sprite-b">Update your cart</a>
+						<a href="#" class="demo-sprite-c">Remove</a>
+					</div>
+					
+					<div class="span3 demo-column">
+						<a href="#" class="demo-sprite-d">Choose a File</a>
+						<a href="#" class="demo-sprite-e">Update your cart</a>
+						<a href="#" class="demo-sprite-f">Remove</a>
+					</div>
+					
+					<div class="span3 demo-column">
+						<a href="#" class="demo-sprite-g">Choose a File</a>
+						<a href="#" class="demo-sprite-h">Update your cart</a>
+						<a href="#" class="demo-sprite-i">Remove</a>
+					</div>
+									
+				</div>
+				
+			</section>
+			
+			<section>
+				
+				<div class="row">
+					
+					<div class="span12">
+					
+						<p>
+							Less code to implement above buttons may be something like following:
+						</p>
+						
+<pre>btn {
+    .sprite( "img/sprite.png", @width, @height, @x-pos, @y-pos )
+}
+
+btn-hover {
+    .sprite( "img/sprite.png", @width, @height, @x-pos, @y-pos, @y-pos-hover )
+}
+
+btn-hover-active {
+    .sprite( "img/sprite.png", @width, @height, @x-pos, @y-pos, @y-pos-hover, @y-pos-active )
+}
+
+</pre>
+					
+					
+						
+					</div>
+					
 				</div>
 				
 			</section>

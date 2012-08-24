@@ -30,6 +30,27 @@
 }
 
 
+/**
+ * CSS image replacement
+ * (from TwitterBootstrap)
+ *
+ * I removed the border and background rule to allow element define it's own rules!
+ */
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 /**
  * TEXT ALIGN SHORTCUTS
@@ -222,10 +243,11 @@
 	border-bottom-right-radius: 			@rb;
 	border-bottom-left-radius: 				@rb;
 }
-
 .border-radius( @rt, @rb, tb ) {			.border-radius(@rt,@rb) }
 .border-radius( @rt, @rb, bt ) {			.border-radius(@rb,@rt) }
 
+
+/* two values - left/right right/left */
 .border-radius( @rl, @rr, lr ) {
 	-webkit-border-radius: 					@rl;
 	-webkit-border-top-right-radius: 		@rr;
@@ -237,10 +259,38 @@
 	border-top-right-radius: 				@rr;
 	border-bottom-right-radius: 			@rr;
 }
-
 .border-radius( @rl, @rr, rl ) {			.border-radius(@rr,@rl,lr) }
 
-// border-radius different for every corner
+
+/* two values - topLeft/bottomRight topRight/bottomLeft */
+.border-radius( @r1, @r2, tlbr ) {
+	-webkit-border-radius: 					@r1;
+	-webkit-border-top-right-radius: 		@r2;
+	-webkit-border-bottom-left-radius: 		@r2;
+	-moz-border-radius: 					@r1;
+	-moz-border-radius-topright: 			@r2;
+	-moz-border-radius-bottomleft: 			@r2;
+	border-radius: 							@r1;
+	border-top-right-radius: 				@r2;
+	border-bottom-left-radius: 				@r2;
+}
+.border-radius( @r1, @r2, trbl ) {			.border-radius(@r2,@r1,tlbr) }
+.border-radius( @r, tlbr ) {				.border-radius(@r,0,tlbr) }
+.border-radius( @r, trbl ) {				.border-radius(0,@r,tlbr) }
+
+
+/* two values - top borders */
+.border-radius( @r, top ) {					.border-radius(@r,0) 				}
+.border-radius( @r, t ) {					.border-radius(@r,top) 				}
+.border-radius( @r, bottom ) {				.border-radius(@r,0,bt) 			}
+.border-radius( @r, b ) {					.border-radius(@r,bottom) 			}
+.border-radius( @r, left ) {				.border-radius(@r,0,lr) 			}
+.border-radius( @r, l ) {					.border-radius(@r,left) 			}
+.border-radius( @r, right ) {				.border-radius(@r,0,rl) 			}
+.border-radius( @r, r ) {					.border-radius(@r,right) 			}
+
+
+/* border-radius different for every corner */
 .border-radius( @r1, @r2, @r3, @r4 ) {
 	-webkit-border-top-left-radius: 		@r1;
 	-webkit-border-top-right-radius: 		@r2;
@@ -257,3 +307,122 @@
 	
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Sprites
+ */
+
+.sprite-pos {				background-position: 0 0 			}
+.sprite-pos( @x, @y ) {		background-position: -@x -@y		}
+.sprite-pos( @x ) {			.sprite-pos(@x,0)					}
+.sprite-pos( null, @y ) {	.sprite-pos(@0,y)					}
+
+
+.sprite( @img, @w, @h, @x, @y ) {
+	
+	.mask(@w,@h);
+	
+	.sprite-pos(@x,@y);
+	
+	.hide-text;
+	
+	background-image: ~"url( @{img}  )"
+	
+}
+
+.inline-sprite( @img, @w, @h, @x, @y ) {
+	
+	.inline-mask(@w,@h);
+	
+	.sprite-pos(@x,@y);
+	
+	.hide-text;
+	
+	background-image: ~"url( @{img}  )"
+	
+}
+
+.isprite( @img, @w, @h, @x, @y ) {
+	
+	.inline-sprite(@img,@w,@h,@x,@y)
+	
+}
+
+
+/**
+ * Vertical states sprite 
+ * usefull for 2 or 3 states buttons when state-related images
+ * are disposed vertically 
+ */
+.vsprite( @img, @w, @h, @x, @y, @y1 ) {
+	
+	.sprite(@img,@w,@h,@x,@y);
+	
+	&:hover {
+		
+		.sprite-pos( @x, @y1 );
+		
+	}
+	
+}
+
+.vsprite( @img, @w, @h, @x, @y, @y1, @y2 ) {
+	
+	.sprite(@img,@w,@h,@x,@y,@y1);
+	
+	&:active {
+		
+		.sprite-pos( @x, @y2 );
+		
+	}
+	
+}
+
+.sprite( @img, @w, @h, @x, @y, @y1 ) { 			.vsprite(@img,@w,@h,@x,@y,@y1) 		}
+.sprite( @img, @w, @h, @x, @y, @y1, @y2 ) { 	.vsprite(@img,@w,@h,@x,@y,@y1,@y2) 	}
+
+
+/**
+ * Horizontal states sprite 
+ * usefull for 2 or 3 states buttons when state-related images
+ * are disposed horizontally 
+ */
+.hsprite( @img, @w, @h, @x, @y, @x1 ) {
+	
+	.sprite(@img,@w,@h,@x,@y);
+	
+	&:hover {
+		
+		.sprite-pos( @x1, @y );
+		
+	}
+	
+}
+
+.hsprite( @img, @w, @h, @x, @y, @x1, @x2 ) {
+	
+	.hsprite(@img,@w,@h,@x,@y,@x1);
+	
+	&:active {
+		
+		.sprite-pos( @x2, @y );
+		
+	}
+	
+}
