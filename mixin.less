@@ -125,14 +125,16 @@
  * SIZING, BOXING and MASKING
  */
 
-.size( @w ) { 				width: @w }
-.size( null, @h ) { 		height: @h }
-.size( @w, @h ) { 			width: @w; height: @h }
+/* size is inpired by the TwitterBootstrap mixin for arguments order. */
+/* this is a compatibility decision but I don't uderstand why to start with height!!! Why Twitter? Why? */
+.size( @h ) { 				height: @h }
+.size( null, @w ) { 		width: @w }
+.size( @h, @w ) { 			width: @w; height: @h }
 
 .block {					display:block }
-.block( @w ) {				.block; .size(@w) }
-.block( null, @h ) {		.block; .size(null,@h) }
-.block( @w, @h ) {			.block; .size(@w,@h) }
+.block( @w ) {				.block; .size(null,@w) }
+.block( null, @h ) {		.block; .size(@h) }
+.block( @w, @h ) {			.block; .size(@h,@w) }
 
 /* inline-block backwards compatibilty hack */
 .inline-block {
@@ -142,9 +144,9 @@
 	*display:				inline;
 }
 
-.inline-block( @w ) {		.inline-block; .size(@w) }
-.inline-block( null, @h ) {	.inline-block; .size(null,@h) }
-.inline-block( @w, @h ) {	.inline-block; .size(@w,@h) }
+.inline-block( @w ) {		.inline-block; .size(null,@w) }
+.inline-block( null, @h ) {	.inline-block; .size(@h) }
+.inline-block( @w, @h ) {	.inline-block; .size(@h,@w) }
 
 /* inline-block shortcuts */
 .iblock {					.inline-block }
