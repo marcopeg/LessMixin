@@ -61,6 +61,8 @@
 								<li><a href="#size">Sizing Elements</a></li>
 								<li><a href="#block">Display Block Utilities</a></li>
 								<li><a href="#mask">Masking Utilities</a></li>
+								<li><a href="#positioning">Positioning Utilities</a></li>
+								
 							</ul>
 						</li>
 						
@@ -477,7 +479,7 @@
 					<div class="span12">
 						
 						<p>
-							You often need to set an item to act as a <e>block</e> element with the <code>block</code> rule.<br>
+							You often need to set an item to act as a <em>block</em> element with the <code>block</code> rule.<br>
 							Use the <span class="label label-info">.block</span> mixin as follow:
 						</p>
 						
@@ -599,7 +601,7 @@
 					<div class="span12">
 						
 						<p>
-							You often need to set an item to act as a <e>mask</e> element with the <code>overflow</code> rule.<br>
+							You often need to set an item to act as a <em>mask</em> element with the <code>overflow</code> rule.<br>
 							Think about sprites, layout cards, etc...<br>
 						</p>
 						
@@ -620,7 +622,7 @@
     .mask;
 }</pre>
 						
-						<p class="demo-mask-a"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-mask-a"><img alt="demo" src="./img/less-logo.jpg"></p>
 					</div>
 					
 					<div class="span3 demo-column">
@@ -629,7 +631,7 @@
     .mask( 80px );
 }</pre>
 						
-						<p class="demo-mask-b"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-mask-b"><img alt="demo" src="./img/less-logo.jpg"></p>
 					</div>
 					
 					<div class="span3 demo-column">
@@ -638,7 +640,7 @@
     .mask( *, 50px );
 }</pre>
 						
-						<p class="demo-mask-c"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-mask-c"><img alt="demo" src="./img/less-logo.jpg"></p>
 					</div>
 					
 					<div class="span3 demo-column">
@@ -647,7 +649,7 @@
     .mask( 80px, 80px );
 }</pre>
 
-						<p class="demo-mask-d"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-mask-d"><img alt="demo" src="./img/less-logo.jpg"></p>
 					</div>
 				
 				</div>
@@ -679,11 +681,104 @@
 					
 					<div class="span12 demo-column">
 						
-						<p class="demo-imask-a"><img src="./img/less-logo.jpg"></p>
-						<p class="demo-imask-b"><img src="./img/less-logo.jpg"></p>
-						<p class="demo-imask-c"><img src="./img/less-logo.jpg"></p>
-						<p class="demo-imask-d"><img src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-a"><img alt="demo" src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-b"><img alt="demo" src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-c"><img alt="demo" src="./img/less-logo.jpg"></p>
+						<p class="demo-imask-d"><img alt="demo" src="./img/less-logo.jpg"></p>
 					
+					</div>
+					
+				</div>
+				
+			</section>
+			
+		</article>
+		
+		
+		
+		
+		
+		
+		<!-- [[    POSITIONING    ]] -->
+		<article id="positioning" class="container">
+			
+			<div class="page-header">
+				<h2>Positioning <small>mixin</small></h2>
+			</div>
+			
+			<section>
+			
+				<div class="row">
+					
+					<div class="span12">
+						
+						<p>
+							LessMixin supplies a set of utilities mixins to sets up <em>relative</em> and <em>absolute</em> positioning of DOM elements.
+						</p>
+						
+						<p>
+							<code>.rel</code> force an element to act as a <em>relative positioning container</em> so all 
+							children can be <em>absolute</em> positioned <strong>from the top-left corner</strong> of container itself.
+						</p>
+						
+						<p>
+							<code>.abs</code> and it's variations force an element to position <strong>absolute to the first relative parent element</strong>.
+						</p>
+						
+						<p>
+							<code>.abs( @vSpace, @hSpace)</code> takes two optional params.
+						</p>
+						
+						<dl class="dl-horizontal">
+							<dt>@vSpace</dt>
+							<dd>sets up the distance from the top/bottom corner</dd>
+							<dt>@hSpace</dt>
+							<dd>sets up the dinstance from the left/right corner</dd>
+						</dl>
+						
+						<p>
+							There are some variations of the <em>.abs</em> mixin to change the corner from which position is calculated.
+						</p>
+						
+						<dl class="dl-horizontal">
+							<dt>.abs()</dt>
+							<dd>top/left corner</dd>
+							<dt>.abs-r()</dt>
+							<dd>top/right corner</dd>
+							<dt>.abs-b()</dt>
+							<dd>bottom/left corner</dd>
+							<dt>.abs-br()</dt>
+							<dd>bottom/right corner</dd>
+						</dl>
+						
+					</div>
+					
+				</div>
+			
+				<div class="row">
+					
+					<div class="span12 demo-column-positioning">
+						
+						<p class="demo-pos-a">.abs;</p>
+						<p class="demo-pos-b">.abs( 40px );</p>
+						<p class="demo-pos-c">.abs( null, 90px );</p>
+						<p class="demo-pos-d">.abs( 40px, 90px );</p>
+						
+						<p class="demo-pos-r-a">.abs-r</p>
+						<p class="demo-pos-r-b">.abs-r( 40px )</p>
+						<p class="demo-pos-r-c">.abs-r( null, 90px )</p>
+						<p class="demo-pos-r-d">.abs-r( 40px, 90px )</p>
+						
+						<p class="demo-pos-b-a">.abs-b</p>
+						<p class="demo-pos-b-b">.abs-b( 40px )</p>
+						<p class="demo-pos-b-c">.abs-b( null, 90px )</p>
+						<p class="demo-pos-b-d">.abs-b( 40px, 90px )</p>
+						
+						<p class="demo-pos-br-a">.abs-br</p>
+						<p class="demo-pos-br-b">.abs-br( 40px )</p>
+						<p class="demo-pos-br-c">.abs-br( null, 90px )</p>
+						<p class="demo-pos-br-d">.abs-br( 40px, 90px )</p>
+						
 					</div>
 					
 				</div>

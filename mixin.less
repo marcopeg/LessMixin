@@ -8,6 +8,29 @@
 
 
 
+
+
+/**
+ * CLEARFIX
+ * (from TwitterBootstrap)
+ */
+.clearfix, .clr {
+	
+	*zoom: 1;
+	
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	
+	&:after {
+		clear: both;
+	}
+	
+}
+
+
+
 /**
  * TEXT ALIGN SHORTCUTS
  * these rules are simple quick shortcuts to the "text-align" CSS property
@@ -132,4 +155,42 @@
 .imask( @w ) {				.inline-mask(@w) }
 .imask( null, @h ) {		.inline-mask(null,@h) }
 .imask( @w, @h ) {			.inline-mask(@w,@h) }
+
+
+
+
+
+
+
+/**
+ * POSITIONING
+ */
+
+.rel {						position: relative }
+
+.abs {						position:absolute; 	top:0; 		left:0 		}
+.abs( @v ) {				.abs; 				top:@v 					}
+.abs( null, @h ) {			.abs; 				left:@h 				}
+.abs( @v, @h ) {			.abs;				top:@v; 	left:@h 	}
+
+.abs-r {					position:absolute; 	top:0; 		right:0 	}
+.abs-r( @v ) {				.abs-r; 			top:@v 					}
+.abs-r( null, @h ) {		.abs-r; 			right:@h 				}
+.abs-r( @v, @h ) {			.abs-r;				top:@v; 	right:@h 	}
+
+.abs-b {					position:absolute; 	bottom:0; 	left:0 		}
+.abs-b( @v ) {				.abs-b; 			bottom:@v 				}
+.abs-b( null, @h ) {		.abs-b; 			left:@h 				}
+.abs-b( @v, @h ) {			.abs-b;				bottom:@v; 	left:@h 	}
+
+.abs-br {					position:absolute; 	bottom:0; 	right:0 	}
+.abs-br( @v ) {				.abs-br; 			bottom:@v 				}
+.abs-br( null, @h ) {		.abs-br; 			right:@h 				}
+.abs-br( @v, @h ) {			.abs-br;			bottom:@v; 	right:@h 	}
+
+
+
+
+
+
 
