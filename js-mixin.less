@@ -1,0 +1,21 @@
+/**
+ * Javascript Runtime Mixin
+ * ========================
+ *
+ * all these mixins uses javascript closures to evaluate complex things
+ */
+
+
+/**
+ * TEXT3D
+ * javascript runtime compiler exiting implementation
+ */
+
+.text3d( @color, @size, @angle ) {
+	text-shadow: ~`(function(c,s,a){ s=parseInt(s); a=parseInt(a); if(a==90)a=89.99; if(a==180)a=179.99; if(a==270)a=269.99; if(a==360)a=0; var ac=Math.cos(a*Math.PI/180); var as=Math.sin(a*Math.PI/180); s++; var r=(1*ac)+"px "+(1*as)+"px 0 "+c; for( var i=2; i<s; i++ ) { r += ","+(i*ac)+"px "+(i*as)+"px 0 "+c; }; return r; })( "@{color}", "@{size}", "@{angle}" )`;
+}
+
+.text3d( @color, @size ) {				.text3d(@color,@size,45) 				}
+.text3d( @color ) { 					.text3d(@color,3px) 					}
+.text3d { 								.text3d(#fff) 							}
+

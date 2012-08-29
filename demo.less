@@ -10,7 +10,7 @@
 
 /* Imports the LessMixin library */
 @import "mixin.less";
-
+@import "js-mixin.less";
 
 
 
@@ -399,7 +399,10 @@ article {
 
 
 
-
+/**
+ * SPRITE
+ */
+ 
 #sprite .demo-column {
 	
 	.tc;
@@ -422,5 +425,66 @@ article {
 .demo-sprite-g {			.sprite( "img/sprite_btn.png", 	137px, 		41px, 	28px, 	23px,	64px, 107px )	}
 .demo-sprite-h {			.sprite( "img/sprite_btn.png", 	170px, 		41px, 	266px, 	23px,	64px, 107px )	}
 .demo-sprite-i {			.sprite( "img/sprite_btn.png", 	157px, 		41px, 	536px, 	23px,	64px, 106px )	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * HIGHLIGHT
+ */
+
+#highlight .demo-column {
+	
+	.tc;
+	.pv( 10px );
+	border:1px solid #666;
+	background: #ccc;
+	color:black;
+	font-size:14pt;
+	.border-radius( 5px );
+	
+}
+
+.demo-highlight-a {		.highlight( yellow )		}
+.demo-highlight-b {		.highlight( lime, 3px )		}
+
+
+
+
+
+
+
+
+
+/**
+ * TEXT3D
+ */
+
+#text3d .demo-column {
+	
+	.tc;
+	.pv( 10px );
+	border:1px solid #666;
+	background: #ccc;
+	color:black;
+	font-size:14pt;
+	.border-radius( 5px );
+	
+}
+
+.demo-text3d-a {		.text3d;					}
+.demo-text3d-b {		.text3d( yellow )			}
+.demo-text3d-c {		.text3d( yellow, 10px )		}
+.demo-text3d-c {		.text3d( #333, 8px, 220 ); font-weight:bold; color:#fff; font-size:1.5em; line-height:1.5em;	}
 
 

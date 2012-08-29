@@ -457,3 +457,22 @@
 
 
 
+
+
+
+
+
+
+
+
+/**
+ * HIGHLIGHT
+ * php compiler safe implementation
+ */
+
+.highlight( @color, @blur, @distance ) {	text-shadow: 0 @distance @blur @color		}
+.highlight( @color, @blur ) { 				.highlight(@color,@blur,1px) 				}
+.highlight( @color ) { 						.highlight(@color,0,1px) 					}
+.highlight { 								.highlight(white) 							}
+
+
