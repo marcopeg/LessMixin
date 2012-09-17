@@ -52,6 +52,10 @@
 
 
 
+
+
+
+
 /**
  * TEXT ALIGN SHORTCUTS
  * these rules are simple quick shortcuts to the "text-align" CSS property
@@ -61,6 +65,23 @@
 .tr { .ta( right ) }
 .tc { .ta( center ) }
 .tj { .ta( justify ) }
+
+
+
+
+
+
+
+/**
+ * TEXT STYLES SHORTCUTS
+ */
+.n, .normal { 		font-weight:		normal 			}
+.b, .bold { 		font-weight:		bold 			}
+.i, .italic { 		font-style: 		italic 			}
+.u, .underline { 	text-decoration:	underline 		}
+.s, .stroke { 		text-decoration: 	line-through 	}
+
+
 
 
 
@@ -124,6 +145,8 @@
 /**
  * SIZING, BOXING and MASKING
  */
+
+.none { display:none }
 
 /* size is inpired by the TwitterBootstrap mixin for arguments order. */
 /* this is a compatibility decision but I don't uderstand why to start with height!!! Why Twitter? Why? */
@@ -190,6 +213,10 @@
  */
 
 .rel {						position: relative }
+.rel( @v ) {				.rel; 				top:@v 					}
+.rel( null, @h ) {			.rel; 				left:@h 				}
+.rel( @v, @h ) {			.rel;				top:@v; 	left:@h 	}
+
 
 .abs {						position:absolute; 	top:0; 		left:0 		}
 .abs( @v ) {				.abs; 				top:@v 					}
@@ -212,7 +239,8 @@
 .abs-br( @v, @h ) {			.abs-br;			bottom:@v; 	right:@h 	}
 
 
-
+.l, .left{					float:left	}
+.r, .right{					float:right }
 
 
 
@@ -438,7 +466,15 @@
 
 
 
-
+/**
+ * Removes margins and 
+ */
+.clear-list {
+	margin:					0;
+	padding:				0;
+	list-style:				none;
+	list-style-position:	inside
+}
 
 /**
  * Inline List
@@ -446,10 +482,7 @@
 
 .inline-list, .ilist {
 	
-	margin:				0;
-	padding:			0;
-	list-style:			none;
-	list-style-position:inside;
+	.clear-list;
 	
 	li { .iblock }
 	
@@ -470,9 +503,66 @@
  * php compiler safe implementation
  */
 
+
+
 .highlight( @color, @blur, @distance ) {	text-shadow: 0 @distance @blur @color		}
 .highlight( @color, @blur ) { 				.highlight(@color,@blur,1px) 				}
 .highlight( @color ) { 						.highlight(@color,0,1px) 					}
 .highlight { 								.highlight(white) 							}
 
+.highlight( big, @color, @blur ) {			text-shadow: 0 1px @blur @color, 0 2px @blur @color, 0 3px @blur @color, 0 4px @blur @color	}
+.highlight( big, @color ) {					.highlight( big, @color, 0 )				}
+.highlight( big ) {							.highlight( big, #fff )						}
+
+.highlight( medium, @color, @blur ) {		text-shadow: 0 1px @blur @color, 0 2px @blur @color, 0 3px @blur @color	}
+.highlight( medium, @color ) {				.highlight( medium, @color, 0 )				}
+.highlight( medium ) {						.highlight( medium, #fff )					}
+
+.highlight( small, @color, @blur ) {		text-shadow: 0 1px @blur @color, 0 2px @blur @color	}
+.highlight( small, @color ) {				.highlight( small, @color, 0 )				}
+.highlight( small ) {						.highlight( small, #fff )						}
+
+.highlight( extra, @color, @blur ) {		text-shadow: 0 1px @blur @color, 0 2px @blur @color, 0 3px @blur @color, 0 4px @blur @color, 0 5px @blur @color, 0 6px @blur @color, 0 7px @blur @color, 0 8px @blur @color	}
+.highlight( extra, @color ) {				.highlight( extra, @color, 0 )				}
+.highlight( extra ) {						.highlight( extra, #fff )					}
+
+.highlight( text3d, @color, @blur ) {		text-shadow: 1px 1px @blur @color	}
+.highlight( text3d, @color ) {				.highlight( text3d, @color, 0 )				}
+.highlight( text3d ) {						.highlight( text3d, #fff )					}
+
+.highlight( text3dSmall, @color, @blur ) {	text-shadow: 1px 1px @blur @color, 2px 2px @blur @color, 3px 3px @blur @color	}
+.highlight( text3dSmall, @color ) {			.highlight( text3dSmall, @color, 0 )		}
+.highlight( text3dSmall ) {					.highlight( text3dSmall, #fff )				}
+
+.highlight( text3dMedium, @color, @blur ) {	text-shadow: 1px 1px @blur @color, 2px 2px @blur @color, 3px 3px @blur @color, 4px 4px @blur @color, 5px 5px @blur @color, 6px 6px @blur @color	}
+.highlight( text3dMedium, @color ) {		.highlight( text3dMedium, @color, 0 )		}
+.highlight( text3dMedium ) {				.highlight( text3dMedium, #fff )			}
+
+.highlight( text3dBig, @color, @blur ) {	text-shadow: 1px 1px @blur @color, 2px 2px @blur @color, 3px 3px @blur @color, 4px 4px @blur @color, 5px 5px @blur @color, 6px 6px @blur @color, 7px 7px @blur @color, 8px 8px @blur @color, 9px 9px @blur @color	}
+.highlight( text3dBig, @color ) {			.highlight( text3dBig, @color, 0 )			}
+.highlight( text3dBig ) {					.highlight( text3dBig, #fff )				}
+
+.highlight( text3dExtra, @color, @blur ) {	text-shadow: 1px 1px @blur @color, 2px 2px @blur @color, 3px 3px @blur @color, 4px 4px @blur @color, 5px 5px @blur @color, 6px 6px @blur @color, 7px 7px @blur @color, 8px 8px @blur @color, 9px 9px @blur @color, 10px 10px @blur @color, 11px 11px @blur @color, 12px 12px @blur @color, 13px 13px @blur @color, 14px 14px @blur @color, 15px 15px @blur @color	}
+.highlight( text3dExtra, @color ) {			.highlight( text3dExtra, @color, 0 )		}
+.highlight( text3dExtra ) {					.highlight( text3dExtra, #fff )				}
+
+.highlight( text3dIn, @color, @blur ) {		text-shadow: -1px -1px @blur @color	}
+.highlight( text3dIn, @color ) {			.highlight( text3dIn, @color, 0 )			}
+.highlight( text3dIn ) {					.highlight( text3dIn, #fff )				}
+
+.highlight( text3dInSmall, @color, @blur ) {text-shadow: -1px -1px @blur @color, -2px -2px @blur @color, -3px -3px @blur @color	}
+.highlight( text3dInSmall, @color ) {		.highlight( text3dInSmall, @color, 0 )		}
+.highlight( text3dInSmall ) {				.highlight( text3dInSmall, #fff )			}
+
+.highlight( text3dInMedium, @color, @blur ){text-shadow: -1px -1px @blur @color, -2px -2px @blur @color, -3px -3px @blur @color, -4px -4px @blur @color, -5px -5px @blur @color, -6px -6px @blur @color	}
+.highlight( text3dInMedium, @color ) {		.highlight( text3dInMedium, @color, 0 )		}
+.highlight( text3dInMedium ) {				.highlight( text3dInMedium, #fff )			}
+
+.highlight( text3dInBig, @color, @blur ) { 	text-shadow: -1px -1px @blur @color, -2px -2px @blur @color, -3px -3px @blur @color, -4px -4px @blur @color, -5px -5px @blur @color, -6px -6px @blur @color, -7px -7px @blur @color, -8px -8px @blur @color, -9px -9px @blur @color	}
+.highlight( text3dInBig, @color ) {			.highlight( text3dInBig, @color, 0 )		}
+.highlight( text3dInBig ) {					.highlight( text3dInBig, #fff )				}
+
+.highlight( text3dInExtra, @color, @blur ) {text-shadow: -1px -1px @blur @color, -2px -2px @blur @color, -3px -3px @blur @color, -4px -4px @blur @color, -5px -5px @blur @color, -6px -6px @blur @color, -7px -7px @blur @color, -8px -8px @blur @color, -9px -9px @blur @color, -10px -10px @blur @color, -11px -11px @blur @color, -12px -12px @blur @color, -13px -13px @blur @color, -14px -14px @blur @color, -15px -15px @blur @color	}
+.highlight( text3dInExtra, @color ) {		.highlight( text3dInExtra, @color, 0 )		}
+.highlight( text3dInExtra ) {				.highlight( text3dInExtra, #fff )			}
 
