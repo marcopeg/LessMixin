@@ -319,6 +319,12 @@
 .border-radius( @r, right ) {				.border-radius(@r,0,rl) 			}
 .border-radius( @r, r ) {					.border-radius(@r,right) 			}
 
+/* single border - radius */
+.border-radius( @r, tl ) {					.border-radius( @r, 0, 0, 0 ) 		}
+.border-radius( @r, tr ) {					.border-radius( 0, @r, 0, 0 ) 		}
+.border-radius( @r, br ) {					.border-radius( 0, 0, @r, 0 ) 		}
+.border-radius( @r, bl ) {					.border-radius( 0, 0, 0, @r ) 		}
+
 
 /* border-radius different for every corner */
 .border-radius( @r1, @r2, @r3, @r4 ) {
